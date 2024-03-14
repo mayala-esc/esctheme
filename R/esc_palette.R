@@ -1,4 +1,4 @@
-
+# Predefined ESC colours combined into palettes
 
 
 esc_palette <- function(){
