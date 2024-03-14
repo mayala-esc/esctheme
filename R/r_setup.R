@@ -1,3 +1,6 @@
+
+#A general setup function that clears the console and workspace and loads in the packages you need to create ESC style charts
+
 r_setup <- function(){
 
   rm(list = ls()[ls()!="path"])   # clear workspace - with the exception of the working directory
