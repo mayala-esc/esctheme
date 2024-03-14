@@ -1,6 +1,6 @@
-library(tidyverse)
-library(ggthemes)
-library(extrafont)
+# library(tidyverse)
+# library(ggthemes)
+# library(extrafont)
 
 
 esc_theme <- function(scale = 0.6){
