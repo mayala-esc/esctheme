@@ -1,0 +1,22 @@
+r_setup <- function(){
+
+  rm(list = ls()[ls()!="path"])   # clear workspace - with the exception of the working directory
+  gc()              # garbage collection
+  cat("\014")       # Clear console
+  graphics.off()    # Clear graphic plots
+
+  # Package installation
+
+  list.of.packages <- c("dplyr","plyr","tidyr","timeDate","ggplot2","lubridate","readxl",
+                        "tidyverse",'magrittr','gridExtra',
+                        "leaps","tseries","urca","writexl",
+                        "reshape2","cowplot","ggplotify",
+                        "scales","readabs","caTools","zoo",
+                        'rmarkdown','rstudioapi','extrafont',"readrba", "readabs", "fpp3","sf",'haven',
+                        "shinyjs", "shinydashboard","shinyWidgets","ggspatial")
+  new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+  if(length(new.packages)) {install.packages(new.packages)}
+  invisible(lapply(list.of.packages, require, character.only = TRUE))
+
+}
+
