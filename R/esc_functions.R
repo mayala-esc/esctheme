@@ -1,4 +1,5 @@
-### ESC functions ####
+
+# generic functions used in the package  ####
 
 esc_save <- function(n, path = NULL, device = "png"){
   if(!is.character(n)){stop('Graph name needs to be in character format')}
