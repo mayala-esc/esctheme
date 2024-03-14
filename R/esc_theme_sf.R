@@ -1,6 +1,5 @@
-library(tidyverse)
-library(ggthemes)
-library(extrafont)
+
+# Create a ggplot2 spatial theme consistent with the ESC style guide.
 
 esc_theme_sf <- function(scale = 0.6){
   
