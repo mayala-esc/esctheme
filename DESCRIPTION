@@ -2,8 +2,7 @@ Package: esctheme
 Title: Create ggplot2 charts in the Essential Services Commission of Victoria style
 Version: 0.0.0.9000
 Authors@R: 
-    person("Miguel", "Ayala", , "miguel.ayala@esc.vic.gov.au", role = c("aut", "cre"),
-           )
+    person("Miguel", "Ayala", , "miguel.ayala@esc.vic.gov.au", role = c("aut", "cre"))
 Description: Enables the user to create ggplot2 charts that conform to the Essential Services Commission of Victoria style guide.
 License: MIT + file LICENSE
 Encoding: UTF-8
