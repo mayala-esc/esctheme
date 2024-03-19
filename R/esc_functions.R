@@ -14,14 +14,14 @@ esc_save <- function(n, path = NULL, device = "png"){
 trail_sum <- function(x,p=4,ivars=unique(x$variable)){
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
-    b <- b %>% mutate(value = case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")*p)) #multiply by n period
+    b <- b %>% dplyr::mutate(value = case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")*p)) #multiply by n period
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
 trail_avg <- function(x,p=4,ivars=unique(x$variable)){
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
-    b <- b %>% mutate(value = case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")))
+    b <- b %>% dplyr::mutate(value = case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")))
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
