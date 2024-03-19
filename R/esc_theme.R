@@ -1,5 +1,9 @@
 
-# Create a ggplot2 theme consistent with the ESC style guide.
+#' Create a ggplot2 theme consistent with the ESC style guide.
+#' 
+#' @import tidyverse
+#' 
+#' @export
 
 esc_theme <- function(scale = 0.6){
   
