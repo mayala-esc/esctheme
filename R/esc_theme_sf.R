@@ -1,5 +1,9 @@
 
-# Create a ggplot2 spatial theme consistent with the ESC style guide.
+#' Create a ggplot2 spatial theme consistent with the ESC style guide.
+#' 
+#' @import ggplot2
+#' 
+#' @export
 
 esc_theme_sf <- function(scale = 0.6){
   
