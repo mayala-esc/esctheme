@@ -1,7 +1,7 @@
 
 #' generic functions used in the package  ####
 #' 
-#' @importFrom dplyr mutate
+#' @importFrom stats lag
 
 esc_save <- function(n, path = NULL, device = "png"){
   if(!is.character(n)){stop('Graph name needs to be in character format')}
@@ -16,7 +16,7 @@ esc_save <- function(n, path = NULL, device = "png"){
 trail_sum <- function(x,p=4,ivars=unique(x$variable)){
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
-    b <- b %>% dplyr::mutate(value = case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")*p)) #multiply by n period
+    b <- b %>% dplyr::mutate(value = dplyr::case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")*p)) #multiply by n period
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
