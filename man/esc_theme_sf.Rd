@@ -6,6 +6,9 @@
 \usage{
 esc_theme_sf(scale = 0.6)
 }
+\arguments{
+\item{scale}{Adjust the scale of the chart. Default is 0.6}
+}
 \description{
 Create a ggplot2 spatial theme consistent with the ESC style guide.
 }
