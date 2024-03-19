@@ -3,6 +3,8 @@
 #' 
 #' @import ggplot2
 #' 
+#' @param scale Adjust the scale of the chart. Default is 0.6
+#' 
 #' @export
 
 esc_theme <- function(scale = 0.6){

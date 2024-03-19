@@ -41,8 +41,6 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
   return(x)}
 
 growth <- function(x,p,ivars=unique(x$variable)) {
-  gr <- function(x,p){
-    (x/lag(x,p)-1)*100}
   
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
