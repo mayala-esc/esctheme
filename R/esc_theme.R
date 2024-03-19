@@ -1,6 +1,3 @@
-# library(tidyverse)
-# library(ggthemes)
-# library(extrafont)
 
 # Create a ggplot2 theme consistent with the ESC style guide.
 
