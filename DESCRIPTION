@@ -15,6 +15,7 @@ Imports:
     ggplot2 (>= 3.5.0),
     ggspatial,
     grid,
+    png,
     purrr,
     reshape2,
     rstudioapi,
