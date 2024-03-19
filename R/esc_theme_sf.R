@@ -12,7 +12,7 @@ esc_theme_sf <- function(scale = 0.6){
                     dk_gray = "#595959",
                     lt_black = "#262626")
   
-  theme_minimal() %+replace%
+  ggplot2::theme_minimal() %+replace%
     
     theme(
       text = element_text(
