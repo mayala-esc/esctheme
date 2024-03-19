@@ -4,10 +4,10 @@
 esc_save <- function(n, path = NULL, device = "png"){
   if(!is.character(n)){stop('Graph name needs to be in character format')}
   if(device!="png"){ttl <- paste0(n,'.svg')
-  ggsave(ttl, w = 12.03, h = 6.67, path = path, device = "svg", bg = "white")} #10.03
+  ggplot2::ggsave(ttl, width = 12.03, height = 6.67, path = path, device = "svg", bg = "white")} #10.03
   
   else{ttl <- paste0(n,'.png')
-  ggsave(ttl, w = 12.03, h = 6.67, path = path, device = "png", bg = "white")}
+  ggplot2::ggsave(ttl, width = 12.03, height =  6.67, path = path, device = "png", bg = "white")}
 }
 
 
@@ -35,7 +35,7 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
     b <- b %>%
-      mutate(value = case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right"))) %>%
+      mutate(value = case_when(!is.na(value)~caTools::runmean(value,p,endrule="NA",align="right"))) %>%
       mutate(value = gr(value,p)) #applies growth cal after the rolling average
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
