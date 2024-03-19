@@ -14,6 +14,7 @@ Imports:
     dplyr,
     ggplot2 (>= 3.5.0),
     ggspatial,
+    grDevices,
     grid,
     png,
     purrr,

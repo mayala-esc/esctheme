@@ -1,4 +1,4 @@
-# Predefined ESC colours combined into palettes
+#' Predefined ESC colours combined into palettes
 
 
 esc_palette <- function(){
@@ -8,13 +8,13 @@ esc_palette <- function(){
 }
 
 
-esc_blue <- colorRampPalette(c("#236192", "#D3DFE9"))
+esc_blue <- grDevices::colorRampPalette(c("#236192", "#D3DFE9"))
 
-esc_magenta <- colorRampPalette(c("#ce0058", "#F5CCDE"))
+esc_magenta <- grDevices::colorRampPalette(c("#ce0058", "#F5CCDE"))
 
-esc_aqua <- colorRampPalette(c("#4986a0", "#DBE7EC"))
+esc_aqua <- grDevices::colorRampPalette(c("#4986a0", "#DBE7EC"))
 
-esc_deepgreen <- colorRampPalette(c("#183028", "#D1D6D4"))
+esc_deepgreen <- grDevices::colorRampPalette(c("#183028", "#D1D6D4"))
 
 esc_yellow <- colorRampPalette(c("#fdda24", "#FFF8D3"))
 
