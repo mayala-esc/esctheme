@@ -1,5 +1,7 @@
 
-# generic functions used in the package  ####
+#' generic functions used in the package  ####
+#' 
+#' @importFrom dplyr mutate
 
 esc_save <- function(n, path = NULL, device = "png"){
   if(!is.character(n)){stop('Graph name needs to be in character format')}
