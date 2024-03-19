@@ -1,7 +1,7 @@
 
 #' Create a ggplot2 theme consistent with the ESC style guide.
 #' 
-#' @import tidyverse
+#' @import ggplot2
 #' 
 #' @export
 
