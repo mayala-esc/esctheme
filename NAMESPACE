@@ -2,4 +2,4 @@
 
 export(esc_theme)
 export(r_setup)
-import(tidyverse)
+import(ggplot2)
