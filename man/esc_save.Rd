@@ -6,6 +6,12 @@
 \usage{
 esc_save(n, path = NULL, device = "png")
 }
+\arguments{
+\item{n}{Name given to chart}
+}
+\value{
+Saved png file
+}
 \description{
 generic functions used in the package  ####
 }

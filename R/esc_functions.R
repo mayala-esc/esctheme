@@ -2,6 +2,12 @@
 #' generic functions used in the package  ####
 #' 
 #' @importFrom stats lag
+#' 
+#' @param n Name given to chart
+#' 
+#' @return Saved png file
+#' 
+#' @export
 
 esc_save <- function(n, path = NULL, device = "png"){
   if(!is.character(n)){stop('Graph name needs to be in character format')}
@@ -13,12 +19,22 @@ esc_save <- function(n, path = NULL, device = "png"){
 }
 
 
+#' Trail sum
+#' 
+#' @export
+#' 
+
 trail_sum <- function(x,p=4,ivars=unique(x$variable)){
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
     b <- b %>% dplyr::mutate(value = dplyr::case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")*p)) #multiply by n period
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
+
+#' Trail average
+#' 
+#' @export
+#' 
 
 trail_avg <- function(x,p=4,ivars=unique(x$variable)){
   for(i in 1:length(ivars)){
@@ -29,6 +45,13 @@ trail_avg <- function(x,p=4,ivars=unique(x$variable)){
 
 gr <- function(x,p){
   (x/lag(x,p)-1)*100}
+
+
+#' Year average growth
+#' 
+#' @export
+#' 
+
 
 y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
   #INPUTS
@@ -42,6 +65,11 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
+#' Growth rate
+#' 
+#' @export
+#' 
+
 growth <- function(x,p,ivars=unique(x$variable)) {
   
   for(i in 1:length(ivars)){
@@ -50,6 +78,11 @@ growth <- function(x,p,ivars=unique(x$variable)) {
       mutate(value = gr(value,p))
     x[which(x$variable==ivars[i]),] <- b}
   return(x)} 
+
+#' Cumulative average growth rate
+#' 
+#' @export
+#' 
 
 
 cagr <- function(x,p=4,ivars=unique(x$variable)) {
