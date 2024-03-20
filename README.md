@@ -25,18 +25,38 @@ This is a basic example which shows you how to use the theme:
 
 ``` r
 library(esctheme)
-library(tidyverse)
-#> Warning: package 'tidyr' was built under R version 4.3.3
-#> Warning: package 'readr' was built under R version 4.3.3
-#> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.1.4     ✔ readr     2.1.5
-#> ✔ forcats   1.0.0     ✔ stringr   1.5.1
-#> ✔ ggplot2   3.5.0     ✔ tibble    3.2.1
-#> ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-#> ✔ purrr     1.0.2     
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-## basic example code
+r_setup()
 ```
+
+
+
+``` r
+
+## basic example code
+
+# create a dataset
+esc_colours <- esc_palette()
+specie <- c(rep("sorgho" , 4) , rep("poacee" , 4) , rep("banana" , 4) , rep("triticum" , 4))
+condition <- rep(c("Normal" , "Stress" , "Nitrogen", "Other") , 4)
+value <- abs(rnorm(16 , 0 , 15))
+data <- data.frame(specie,condition,value)
+
+
+data <- data %>% 
+  arrange(specie, rev(value)) %>% 
+  dplyr::group_by(specie) %>% 
+  dplyr::mutate(label_y = cumsum(value)-0.5*value)
+
+# Plot data with ESC style
+data %>% 
+  ggplot(aes(fill=condition, y=value, x=specie)) + 
+  geom_bar(position="stack", stat="identity") +
+  scale_fill_manual(values = esc_colours) +
+  scale_y_continuous(breaks = round(seq(min(data$value)*0, max(data$value)*3, by = 10),1)) + 
+  facet_wrap(~condition) +
+  labs(title = "This is a title",
+       subtitle = "This is a subtitle") +
+  esc_theme(scale = .8)
+```
+
+<img src="man/figures/README-example-1.png" width="100%" />
