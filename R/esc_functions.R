@@ -39,7 +39,15 @@ trail_sum <- function(x,p=4,ivars=unique(x$variable)){
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
+
+
 #' Trail average
+#' Calculates a trailing average
+#' 
+#' @param x data in long format. Data in 3 columns (Dates, variable and value)
+#' @param p Number of periods to calculate trailing average over (defaults to 4)
+#' @param ivars The variables you want to transform. Defaults to transforming all variables.
+#' @return Transformed data, still in long format
 #' 
 #' @export
 #' 
@@ -59,6 +67,13 @@ gr <- function(x,p){
 
 #' Year average growth
 #' 
+#' Calculates year average growth rates
+#' 
+#' @param x data in long format. Data in 3 columns (Dates, variable and value)
+#' @param p Number of periods to calculate year average growth (defaults to 4)
+#' @param ivars The variables you want to transform. Defaults to transforming all variables.
+#' @return Transformed data, still in long format
+#' 
 #' @export
 #' 
 
@@ -75,7 +90,15 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
+
+
 #' Growth rate
+#' 
+#' Calculates growth rates
+#' @param x Your data in long format. Data in 3 columns (Dates, variable and value)
+#' @param p Number of periods 
+#' @param ivars The variables you want to transform. Defaults to transforming all variables.
+#' @return Transformed data, still in long format
 #' 
 #' @export
 #' 
@@ -91,6 +114,11 @@ growth <- function(x,p,ivars=unique(x$variable)) {
 
 
 #' Cumulative average growth rate
+#' Calculates compound annual growth rates. Data must be at quareterly frequency
+#' @param x Your data in long format. Data in 3 columns (Dates, variable and value)
+#' @param p Number of periods required to calculate compound annual growth rate. 
+#' @param ivars The variables you want to transform. Defaults to transforming all variables. 
+#' @return Transformed data, still in long format
 #' 
 #' @export
 #' 

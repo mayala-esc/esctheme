@@ -2,10 +2,22 @@
 % Please edit documentation in R/esc_functions.R
 \name{cagr}
 \alias{cagr}
-\title{Cumulative average growth rate}
+\title{Cumulative average growth rate
+Calculates compound annual growth rates. Data must be at quareterly frequency}
 \usage{
 cagr(x, p = 4, ivars = unique(x$variable))
 }
+\arguments{
+\item{x}{Your data in long format. Data in 3 columns (Dates, variable and value)}
+
+\item{p}{Number of periods required to calculate compound annual growth rate.}
+
+\item{ivars}{The variables you want to transform. Defaults to transforming all variables.}
+}
+\value{
+Transformed data, still in long format
+}
 \description{
 Cumulative average growth rate
+Calculates compound annual growth rates. Data must be at quareterly frequency
 }

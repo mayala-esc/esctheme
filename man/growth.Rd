@@ -6,6 +6,16 @@
 \usage{
 growth(x, p, ivars = unique(x$variable))
 }
+\arguments{
+\item{x}{Your data in long format. Data in 3 columns (Dates, variable and value)}
+
+\item{p}{Number of periods}
+
+\item{ivars}{The variables you want to transform. Defaults to transforming all variables.}
+}
+\value{
+Transformed data, still in long format
+}
 \description{
-Growth rate
+Calculates growth rates
 }
