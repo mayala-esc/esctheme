@@ -63,7 +63,7 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
     b <- x[which(x$variable==ivars[i]),] 
     b <- b %>%
       dplyr::mutate(value = dplyr::case_when(!is.na(b$value)~caTools::runmean(b$value,p,endrule="NA",align="right"))) %>%
-      dplyr::mutate(value = gr(value,p)) #applies growth cal after the rolling average
+      dplyr::mutate(value = gr(b$value,p)) #applies growth cal after the rolling average
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
