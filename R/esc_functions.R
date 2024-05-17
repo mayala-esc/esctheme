@@ -39,7 +39,7 @@ trail_sum <- function(x,p=4,ivars=unique(x$variable)){
 trail_avg <- function(x,p=4,ivars=unique(x$variable)){
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
-    b <- b %>% dplyr::mutate(value = case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")))
+    b <- b %>% dplyr::mutate(value = dplyr::case_when(!is.na(value)~runmean(value,p,endrule="NA",align="right")))
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
