@@ -15,5 +15,7 @@ Imports:
     ggplot2 (>= 3.5.0),
     grid,
     png,
+    utils,
+    grDevices
 Suggests: 
     ggthemes
