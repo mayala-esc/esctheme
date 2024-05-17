@@ -43,8 +43,6 @@ trail_avg <- function(x,p=4,ivars=unique(x$variable)){
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
-gr <- function(x,p){
-  (x/lag(x,p)-1)*100}
 
 
 #' Year average growth
@@ -71,6 +69,9 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
 #' 
 
 growth <- function(x,p,ivars=unique(x$variable)) {
+  
+  gr <- function(x,p){
+    (x/lag(x,p)-1)*100}
   
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
