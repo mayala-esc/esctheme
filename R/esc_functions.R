@@ -4,6 +4,8 @@
 #' @importFrom stats lag
 #' 
 #' @param n Name given to chart
+#' @param path file path given to save chart
+#' @param device "png" or "svg" file type
 #' 
 #' @return Saved png file
 #' 
@@ -20,6 +22,12 @@ esc_save <- function(n, path = NULL, device = "png"){
 
 
 #' Trail sum
+#' Calculate a trailing sum. Useful for calculating annual totals.
+#' 
+#' @param x data in long format. Data in 3 columns (Dates, variable and value)
+#' @param p Number of periods to calculate trailing sum over (defaults to 4)
+#' @param ivars The variables you want to transform. Defaults to transforming all variables.
+#' @return Transformed data, still in long format
 #' 
 #' @export
 #' 
@@ -81,11 +89,11 @@ growth <- function(x,p,ivars=unique(x$variable)) {
     x[which(x$variable==ivars[i]),] <- b}
   return(x)} 
 
+
 #' Cumulative average growth rate
 #' 
 #' @export
 #' 
-
 
 cagr <- function(x,p=4,ivars=unique(x$variable)) {
   
