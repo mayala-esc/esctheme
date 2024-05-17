@@ -9,6 +9,8 @@ esc_palette <- function(){
 }
 
 #' esc_blue
+#' 
+#' @param n
 #'
 #' @export
 #'

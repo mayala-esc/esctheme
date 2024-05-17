@@ -6,6 +6,9 @@
 \usage{
 esc_blue(n)
 }
+\arguments{
+\item{n}{}
+}
 \description{
 esc_blue
 }
