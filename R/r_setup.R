@@ -21,7 +21,7 @@ r_setup <- function(){
                         'rmarkdown','rstudioapi','extrafont',"readrba", "fpp3","sf",'haven',
                         "shinyjs", "shinydashboard","shinyWidgets","ggspatial")
   new.packages <- list.of.packages[!(list.of.packages %in% utils::installed.packages()[,"Package"])]
-  if(length(new.packages)) {install.packages(new.packages)}
+  if(length(new.packages)) {utils::install.packages(new.packages)}
   invisible(lapply(list.of.packages, require, character.only = TRUE))
 
 }
