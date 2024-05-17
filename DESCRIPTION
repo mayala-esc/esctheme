@@ -16,6 +16,7 @@ Imports:
     grid,
     png,
     utils,
-    grDevices
+    grDevices,
+    magrittr
 Suggests: 
     ggthemes
