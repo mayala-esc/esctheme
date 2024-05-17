@@ -44,6 +44,8 @@ trail_avg <- function(x,p=4,ivars=unique(x$variable)){
   return(x)}
 
 
+gr <- function(x,p){
+  (x/lag(x,p)-1)*100}
 
 #' Year average growth
 #' 
@@ -58,8 +60,8 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
     b <- b %>%
-      mutate(value = case_when(!is.na(value)~caTools::runmean(value,p,endrule="NA",align="right"))) %>%
-      mutate(value = gr(value,p)) #applies growth cal after the rolling average
+      dplyr::mutate(value = case_when(!is.na(value)~caTools::runmean(value,p,endrule="NA",align="right"))) %>%
+      dplyr::mutate(value = gr(value,p)) #applies growth cal after the rolling average
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
@@ -70,13 +72,10 @@ y_avg_growth <- function(x,p=4,ivars=unique(x$variable)) {
 
 growth <- function(x,p,ivars=unique(x$variable)) {
   
-  gr <- function(x,p){
-    (x/lag(x,p)-1)*100}
-  
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
     b <- b %>%
-      mutate(value = gr(value,p))
+      dplyr::mutate(value = gr(value,p))
     x[which(x$variable==ivars[i]),] <- b}
   return(x)} 
 
@@ -90,8 +89,8 @@ cagr <- function(x,p=4,ivars=unique(x$variable)) {
   for(i in 1:length(ivars)){
     b <- x[which(x$variable==ivars[i]),] 
     b <- b %>%
-      mutate(value = case_when(!is.na(value)~runmean(value,4,endrule="NA",align="right"))) %>%
-      mutate(value = ((value/lag(value,p*4))^(1/p)-1)*100) #applies the cagr after the rolling average
+      dplyr::mutate(value = case_when(!is.na(value)~runmean(value,4,endrule="NA",align="right"))) %>%
+      dplyr::mutate(value = ((value/lag(value,p*4))^(1/p)-1)*100) #applies the cagr after the rolling average
     x[which(x$variable==ivars[i]),] <- b}
   return(x)}
 
