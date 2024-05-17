@@ -8,6 +8,10 @@ esc_save(n, path = NULL, device = "png")
 }
 \arguments{
 \item{n}{Name given to chart}
+
+\item{path}{file path given to save chart}
+
+\item{device}{"png" or "svg" file type}
 }
 \value{
 Saved png file
