@@ -7,7 +7,7 @@
 #' 
 #' @export
 
-esc_theme <- function(scale = 0.6){
+esc_theme <- function(scale = 0.9){
   
   colorlist <- list(lt_gray = "#D9D9D9",
                     gray = "#D7D7D7",
