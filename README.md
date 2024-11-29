@@ -56,7 +56,7 @@ data %>%
   facet_wrap(~condition) +
   labs(title = "This is a title",
        subtitle = "This is a subtitle") +
-  esc_theme(scale = .8)
+  esc_theme(rm_y_leg = TRUE)
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
