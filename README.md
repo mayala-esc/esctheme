@@ -38,7 +38,7 @@ r_setup()
 esc_colours <- esc_palette()
 specie <- c(rep("sorgho" , 4) , rep("poacee" , 4) , rep("banana" , 4) , rep("triticum" , 4))
 condition <- rep(c("Normal" , "Stress" , "Nitrogen", "Other") , 4)
-value <- abs(rnorm(16 , 0 , 15))
+value <- rnorm(16 , -5 , 15)
 data <- data.frame(specie,condition,value)
 
 
@@ -52,7 +52,6 @@ data %>%
   ggplot(aes(fill=condition, y=value, x=specie)) + 
   geom_bar(position="stack", stat="identity") +
   scale_fill_manual(values = esc_colours) +
-  scale_y_continuous(breaks = round(seq(min(data$value)*0, max(data$value)*3, by = 10),1)) + 
   facet_wrap(~condition) +
   labs(title = "This is a title",
        subtitle = "This is a subtitle") +
