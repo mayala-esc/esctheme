@@ -37,7 +37,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
       ),
     line = element_line(
         colour = colorlist$lt_gray, 
-        linewidth = .33#1*scale
+        linewidth = 0.5#1*scale
                         ),
     rect = element_rect(
         fill = NA,
@@ -51,9 +51,9 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
     axis.title.x = x_leg,
     
     axis.ticks.x = element_line(size=1*scale, colour= colorlist$dk_gray), #D2D2D2
-    axis.ticks.length = unit(0.15*scale, "cm"),
+    axis.ticks.length = unit(-0.15*scale, "cm"),
     
-    axis.text = element_text(angle = 0, colour = colorlist$txt_gray,size=18*scale), #495057
+    axis.text = element_text(angle = 0, colour = colorlist$txt_gray,size=16*scale), #495057
     axis.text.x = element_text(margin=unit(c(0.35,0.35,0,0.5)*scale, "cm")),
     axis.text.y = element_text(margin=unit(c(0.5,0.35,0.5,0.5)*scale, "cm")),
     axis.text.y.right= element_text(margin=unit(c(0.5,0.5,0.5,0.35)*scale, "cm")),
@@ -99,6 +99,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
     
     strip.background = element_blank(),
     strip.placement = "inside",
+    panel.spacing = unit(1, "lines"),
     strip.text = element_text(size = 14*scale,
                               margin=unit(c(0.15,0,0.5,0)*scale,"cm"),
                               colour = colorlist$txt_gray)
