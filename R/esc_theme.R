@@ -37,7 +37,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
       ),
     line = element_line(
         colour = colorlist$lt_gray, 
-        linewidth = .03#1*scale
+        linewidth = .33#1*scale
                         ),
     rect = element_rect(
         fill = NA,
@@ -92,7 +92,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
       color = NA #'#808080'
       ),
     #panel.grid = element_line(colour = NULL),
-    panel.grid.major.y = element_line(colour = colorlist$lt_gray, linewidth = .33), #D2D2D2
+    panel.grid.major.y = element_line(colour = colorlist$lt_gray), #D2D2D2
     panel.grid.major.x = element_blank(),#element_line(color = '#D7D7D7'), #added
     panel.grid.minor = element_blank(),#element_line(color = '#D7D7D7'),
     plot.margin = unit(c(1, 1, 1, 1), "lines"),
