@@ -4,10 +4,10 @@
 \alias{esc_theme}
 \title{Create a ggplot2 theme consistent with the ESC style guide.}
 \usage{
-esc_theme(scale = 0.6)
+esc_theme(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE)
 }
 \arguments{
-\item{scale}{Adjust the scale of the chart. Default is 0.6}
+\item{scale}{Adjust the scale of the chart. Default is 0.8}
 }
 \description{
 Create a ggplot2 theme consistent with the ESC style guide.
