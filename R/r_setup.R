@@ -19,7 +19,7 @@ r_setup <- function(){
                         "reshape2","cowplot","ggplotify",
                         "scales","readabs","caTools","zoo",
                         'rmarkdown','rstudioapi','extrafont',"readrba", "fpp3","sf",'haven',
-                        "shinyjs", "shinydashboard","shinyWidgets","ggspatial")
+                        "shinyjs", "shinydashboard","shinyWidgets","ggspatial", "extrafont")
   new.packages <- list.of.packages[!(list.of.packages %in% utils::installed.packages()[,"Package"])]
   if(length(new.packages)) {utils::install.packages(new.packages)}
   invisible(lapply(list.of.packages, require, character.only = TRUE))
