@@ -14,10 +14,10 @@
 esc_save <- function(n, path = NULL, device = "png"){
   if(!is.character(n)){stop('Graph name needs to be in character format')}
   if(device!="png"){ttl <- paste0(n,'.svg')
-  ggplot2::ggsave(ttl, width = 12.03, height = 6.67, path = path, device = "svg", bg = "white")} #10.03
+  ggplot2::ggsave(ttl, width = 12.03, height = 6.67, path = path, device = "svg", bg = NULL)} #10.03
   
   else{ttl <- paste0(n,'.png')
-  ggplot2::ggsave(ttl, width = 12.03, height =  6.67, path = path, device = "png", bg = NULL)}
+  ggplot2::ggsave(ttl, width = 12.03, height =  6.67, path = path, device = "png", bg = "white")}
 }
 
 
