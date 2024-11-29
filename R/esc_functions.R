@@ -17,7 +17,7 @@ esc_save <- function(n, path = NULL, device = "png"){
   ggplot2::ggsave(ttl, width = 12.03, height = 6.67, path = path, device = "svg", bg = "white")} #10.03
   
   else{ttl <- paste0(n,'.png')
-  ggplot2::ggsave(ttl, width = 12.03, height =  6.67, path = path, device = "png", bg = "white")}
+  ggplot2::ggsave(ttl, width = 12.03, height =  6.67, path = path, device = "png", bg = NULL)}
 }
 
 

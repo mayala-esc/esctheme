@@ -56,7 +56,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
     axis.text.y = element_text(margin=unit(c(0.5,0.35,0.5,0.5)*scale, "cm")),
     axis.text.y.right= element_text(margin=unit(c(0.5,0.5,0.5,0.35)*scale, "cm")),
     
-    #axis.line = element_blank(),#element_line(size=1*scale, colour= colorlist$gray), #"#495057"
+    
     axis.line.x = element_line(size=1*scale, colour= colorlist$dk_gray), #"#495057"
     axis.line.y = element_blank(),#element_line(size=1*scale, colour= "#495057"),
     
@@ -86,7 +86,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
     legend.box = "horizontal", # "vertical",
     
     panel.background = element_rect(
-      fill = NA,#'white', 
+      fill = 'white', 
       color = '#808080'
       ),
     #panel.grid = element_line(colour = NULL),
