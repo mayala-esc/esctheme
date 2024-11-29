@@ -17,7 +17,7 @@ Imports:
     png,
     utils,
     grDevices,
-    magrittr
+    magrittr,
     extrafont
 Suggests: 
     ggthemes
