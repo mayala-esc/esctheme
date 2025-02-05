@@ -78,6 +78,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
       colour = "#7ba0be"
       ),
     plot.title.position = "plot",
+    plot.caption.position = "plot",
     plot.subtitle = element_text(hjust=0.0,margin=unit(c(0.15,0,0.5,0)*scale,"cm"),size=18*scale),
     plot.caption = element_text(hjust=0.0,size=14*scale,margin=unit(c(0.25,0,0.15,0)*scale,"cm")),
     
