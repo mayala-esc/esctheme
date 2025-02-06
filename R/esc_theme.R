@@ -59,7 +59,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
     
     axis.title.x = x_leg,
     
-    axis.ticks.x = element_line(size=1*scale, colour= colorlist$dk_grey), 
+    axis.ticks.x = element_line(linewidth=1*scale, colour= colorlist$dk_grey), 
     axis.ticks.length = unit(-0.15*scale, "cm"),
     
     axis.text = element_text(angle = 0, colour = colorlist$dk_grey,size=16*scale),
@@ -68,7 +68,7 @@ esc_theme <- function(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE){
     axis.text.y.right= element_text(margin=unit(c(0.5,0.5,0.5,0.35)*scale, "cm")),
     
     
-    axis.line.x = element_line(size=1*scale, colour= colorlist$dk_grey),
+    axis.line.x = element_line(linewidth=1*scale, colour= colorlist$dk_grey),
     axis.line.y = element_blank(),
     
     legend.key = element_rect(colour=NA, fill=NA),
