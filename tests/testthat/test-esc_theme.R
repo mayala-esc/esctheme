@@ -1,3 +1,3 @@
-test_that("esc_theme() modifies graph", {
-  esc_theme()
+test_that("esc_theme works", {
+  expect_s3_class(esc_theme(), "theme")
 })
