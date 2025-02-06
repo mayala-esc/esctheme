@@ -8,6 +8,10 @@ esc_theme(scale = 0.8, rm_x_leg = FALSE, rm_y_leg = FALSE)
 }
 \arguments{
 \item{scale}{Adjust the scale of the chart. Default is 0.8}
+
+\item{rm_x_leg}{logical value indicating whether x label be removed from chart}
+
+\item{rm_y_leg}{logical value indicating whether y label be removed from chart}
 }
 \description{
 Create a ggplot2 theme consistent with the ESC style guide.
