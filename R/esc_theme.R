@@ -5,6 +5,8 @@
 #' @import extrafont
 #' 
 #' @param scale Adjust the scale of the chart. Default is 0.8
+#' @param rm_x_leg logical value indicating whether x label be removed from chart
+#' @param rm_y_leg logical value indicating whether y label be removed from chart
 #' 
 #' @export
 
