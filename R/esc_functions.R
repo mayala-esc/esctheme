@@ -1,17 +1,21 @@
 
-#' Generic functions used in the package
+#' Save a ESC styled plot with sensible defaults
 #' 
 #' @importFrom stats lag
 #' 
 #' @param n Name given to chart
 #' @param path File path given to save chart
 #' @param device "png" or "svg" file type
+#' @param with The width size. Default to 14.5
+#' @param height The height size. Default to 6
+#' @param ... Optional arguments to ggsave.
 #' 
 #' @return Saved png file
 #' 
 #' @export
 
-esc_save <- function(n, path = NULL, device = "png", width = 14.5, height = 6){
+esc_save <- function(n, path = NULL, device = "png", width = 14.5, height = 6,
+                     ...){
   
   if(!is.character(n)){stop('Graph name needs to be in character format')}
   if(device!="png"){ttl <- paste0(n,'.svg')
