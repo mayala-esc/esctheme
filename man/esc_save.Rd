@@ -2,20 +2,26 @@
 % Please edit documentation in R/esc_functions.R
 \name{esc_save}
 \alias{esc_save}
-\title{generic functions used in the package  ####}
+\title{Save a ESC styled plot with sensible defaults}
 \usage{
-esc_save(n, path = NULL, device = "png")
+esc_save(n, path = NULL, device = "png", width = 14.5, height = 6, ...)
 }
 \arguments{
 \item{n}{Name given to chart}
 
-\item{path}{file path given to save chart}
+\item{path}{File path given to save chart}
 
 \item{device}{"png" or "svg" file type}
+
+\item{height}{The height size. Default to 6}
+
+\item{...}{Optional arguments to ggsave.}
+
+\item{with}{The width size. Default to 14.5}
 }
 \value{
 Saved png file
 }
 \description{
-generic functions used in the package  ####
+Save a ESC styled plot with sensible defaults
 }
