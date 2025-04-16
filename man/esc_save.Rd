@@ -13,11 +13,11 @@ esc_save(n, path = NULL, device = "png", width = 14.5, height = 6, ...)
 
 \item{device}{"png" or "svg" file type}
 
+\item{width}{The width size. Default to 14.5}
+
 \item{height}{The height size. Default to 6}
 
 \item{...}{Optional arguments to ggsave.}
-
-\item{with}{The width size. Default to 14.5}
 }
 \value{
 Saved png file

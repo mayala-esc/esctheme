@@ -6,7 +6,7 @@
 #' @param n Name given to chart
 #' @param path File path given to save chart
 #' @param device "png" or "svg" file type
-#' @param with The width size. Default to 14.5
+#' @param width The width size. Default to 14.5
 #' @param height The height size. Default to 6
 #' @param ... Optional arguments to ggsave.
 #' 
